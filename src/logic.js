@@ -69,6 +69,9 @@ export async function generate(modelId, genre, theme) {
   for await (const token of run.tokenStream) text += token;
   text = text.trim();
 
+  // Fall back to a guaranteed on-topic pair of lines whenever the model
+  // refused, or too many candidate lines were dropped (unusable, or leaking
+  // nouns from the hardcoded few-shot example) to leave a usable result.
   let lines = looksUnusable(text) ? [] : parseLines(text, theme);
   if (lines.length < 2) lines = FALLBACK(genre, theme);
 
