@@ -1,0 +1,25 @@
+{
+  "name": "qvac-book-opening-line-generator",
+  "version": "1.0.0",
+  "description": "Enter a genre and a theme and an on-device AI writes 2-3 possible opening lines for a story in that genre/theme. No cloud call, no API key.",
+  "type": "module",
+  "main": "src/gui.js",
+  "scripts": {
+    "start": "node src/gui.js",
+    "gui": "node src/gui.js"
+  },
+  "keywords": [
+    "qvac",
+    "on-device-ai",
+    "writing",
+    "llm",
+    "offline-ai"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@qvac/sdk": "^0.19.0"
+  },
+  "engines": {
+    "node": ">=22.17"
+  }
+}
